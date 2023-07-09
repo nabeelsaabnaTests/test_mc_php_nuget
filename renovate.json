@@ -1,19 +1,38 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:base", "group:allNonMajor"
-  ],
-    "prBodyDefinitions": {
-    "Age": "[![age](https://badges.renovateapi.com/packages/{{datasource}}/{{replace '/' '%2f' depName}}/{{{toVersion}}}/age-slim)](https://docs.renovatebot.com/merge-confidence/)",
-    "Adoption": "[![adoption](https://badges.renovateapi.com/packages/{{datasource}}/{{replace '/' '%2f' depName}}/{{{toVersion}}}/adoption-slim)](https://docs.renovatebot.com/merge-confidence/)",
-    "Passing": "[![passing](https://badges.renovateapi.com/packages/{{datasource}}/{{replace '/' '%2f' depName}}/{{{toVersion}}}/compatibility-slim/{{{fromVersion}}})](https://docs.renovatebot.com/merge-confidence/)",
-    "Confidence": "[![confidence](https://badges.renovateapi.com/packages/{{datasource}}/{{replace '/' '%2f' depName}}/{{{toVersion}}}/confidence-slim/{{{fromVersion}}})](https://docs.renovatebot.com/merge-confidence/)"
-  },
-  "packageRules": [
-    {
-      "datasources": ["maven", "npm", "pypi","packagist","nuget"],
-      "updateTypes": ["patch", "minor", "major"],
-      "prBodyColumns": ["Package", "Change", "Age", "Adoption", "Passing", "Confidence"]
-    }
-  ]
+	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
+	"extends": [
+		"config:base",
+		"group:allNonMajor"
+	],
+	"dependencyDashboard": true,
+	"prBodyDefinitions": {
+		"Age": "[![age](https://developer.mend.io/api/mc/badges/age/{{datasource}}/{{replace '/' '%2f' depName}}/{{{toVersion}}}?slim=true)](https://docs.renovatebot.com/merge-confidence/)",
+		"Adoption": "[![adoption](https://developer.mend.io/api/mc/badges/adoption/{{datasource}}/{{replace '/' '%2f' depName}}/{{{toVersion}}}?slim=true)](https://docs.renovatebot.com/merge-confidence/)",
+		"Passing": "[![passing](https://developer.mend.io/api/mc/badges/compatibility/{{datasource}}/{{replace '/' '%2f' depName}}/{{{fromVersion}}}/{{{toVersion}}}?slim=true)](https://docs.renovatebot.com/merge-confidence/)",
+		"Confidence": "[![confidence](https://developer.mend.io/api/mc/badges/confidence/{{datasource}}/{{replace '/' '%2f' depName}}/{{{fromVersion}}}/{{{toVersion}}}?slim=true)](https://docs.renovatebot.com/merge-confidence/)"
+	},
+	"packageRules": [
+		{
+			"datasources": [
+				"maven",
+				"npm",
+				"pypi",
+				"packagist",
+				"nuget"
+			],
+			"updateTypes": [
+				"patch",
+				"minor",
+				"major"
+			],
+			"prBodyColumns": [
+				"Package",
+				"Change",
+				"Age",
+				"Adoption",
+				"Passing",
+				"Confidence"
+			]
+		}
+	]
 }
