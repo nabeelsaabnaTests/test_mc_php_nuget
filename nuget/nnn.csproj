@@ -7,7 +7,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.JSInterop" Version="5.0.8" />
     <PackageReference Include="Microsoft.Playwright" Version="1.6.0" />
-    <PackageReference Include="Nuke.Common" Version="5.0.0" />
+    <PackageReference Include="Nuke.Common" Version="7.0.6" />
   </ItemGroup>
 
 </Project>
